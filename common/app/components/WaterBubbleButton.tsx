@@ -57,7 +57,7 @@ export default function WaterBubbleButton({ onClick, isClicked }: { onClick: () 
     >  <img
     src={imgX.src}
     alt="Click"
-    className="w-full h-auto max-w-[50px] md:max-w-[100px] lg:max-w-[100px]"/>
+    className="w-full p-1 m-5 h-auto max-w-[50px] md:max-w-[100px] lg:max-w-[100px]"/>
       {isClicked && (
         <>
           {[...Array(10)].map((_, i) => (

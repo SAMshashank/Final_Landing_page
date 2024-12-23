@@ -1,5 +1,6 @@
 import { Mail } from 'lucide-react'
 import { FormEvent, useState } from 'react'
+import { toast } from "react-toastify";
 
 export default function MarketingContact() {
 
@@ -8,6 +9,13 @@ export default function MarketingContact() {
   // Handle input change and update state
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
+
+   
+      toast.success("Thankyou", {
+        position: toast.POSITION.TOP_CENTER,
+        className: "text-blue-600 font-semibold",
+      });
+    
   };
 
   const handleSubmit = async (e: FormEvent) => {
