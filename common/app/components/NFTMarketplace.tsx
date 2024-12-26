@@ -12,6 +12,22 @@ export default function NFTMarketplace() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [customImage, setCustomImage] = useState<string | null>(null)
   const [nftProducts,setnftProducts]=useState<ProductInterface[]>([])
+  const [toastMessage, setToastMessage] = useState('');
+  const [toastType, setToastType] = useState<'success' | 'error' | ''>('');
+
+  const showToast = (message: string, type: 'success' | 'error') => {
+    setToastMessage(message);
+    setToastType(type);
+    setTimeout(() => {
+      setToastMessage('');
+      setToastType('');
+    }, 3000); // Hide the toast after 3 seconds
+  };
+
+
+function ttx(){
+  showToast('Comming Soon...' , 'error');
+}
 
 useEffect(() => {
 
@@ -69,7 +85,17 @@ const fetchPartnerData = async (title: string) => {
 
   return (
     <section className="py-16 bg-gray-800">
+        {toastMessage && (
+          <div
+            className={`fixed top-5 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-md text-white shadow-lg ${
+              toastType === 'success' ? 'bg-green-500' : 'bg-blue-500'
+            }`}
+          >
+            {toastMessage}
+          </div>
+        )}
       <div className="container mx-auto px-4">
+    
         <h2 className="text-3xl font-bold text-center mb-12 text-yellow-400">NFT Marketplace</h2>
         <p className="text-center text-gray-300 mb-8">Customize your avatar with unique accessories from our NFT marketplace.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -103,7 +129,7 @@ const fetchPartnerData = async (title: string) => {
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-yellow-400">{product.name}</h3>
                 <p className="text-gray-300 mt-2">{product.price}</p>
-                <button className="mt-4 w-full bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded-full font-semibold transition-colors duration-300">
+                <button onClick={ttx} className="mt-4 w-full bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded-full font-semibold transition-colors duration-300">
                   Buy Now
                 </button>
               </div>

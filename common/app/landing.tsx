@@ -14,6 +14,7 @@ import Team from './components/Team'
 import MarketingContact from './components/MarketingContact'
 import Footer from './components/Footer'
 import WaterBubbleButton from './components/WaterBubbleButton'
+
 const DynamicIframe = dynamic(() => import('./components/DynamicIframe'), { ssr: true })
 
 export default function LandingPage() {
@@ -62,6 +63,8 @@ export default function LandingPage() {
       <Roadmap />
       <Community />
       <Team />
+    
+      
       <MarketingContact />
       <Footer />
     </div>
