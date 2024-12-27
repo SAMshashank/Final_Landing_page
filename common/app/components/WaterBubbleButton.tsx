@@ -3,7 +3,7 @@
 import { motion, useAnimation } from 'framer-motion'
 import styled from 'styled-components'
 import { useEffect } from 'react'
-import imgX from "./Img/2725783.png"
+import imgX from "/Img/2725783.png"
 
 const BubbleButton = styled(motion.button)`
   width: 150px;
