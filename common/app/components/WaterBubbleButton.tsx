@@ -3,7 +3,7 @@
 import { motion, useAnimation } from 'framer-motion'
 import styled from 'styled-components'
 import { useEffect } from 'react'
-import imgX from "/Img/2725783.png"
+
 
 const BubbleButton = styled(motion.button)`
   width: 150px;
@@ -55,7 +55,7 @@ export default function WaterBubbleButton({ onClick, isClicked }: { onClick: () 
       initial="initial"
       animate={controls}
     >  <img
-    src={imgX.src}
+    src='/Img/2725783.png'
     alt="Click"
     className="w-full h-auto max-w-[50px] md:max-w-[100px] lg:max-w-[100px] p-1 m-5 mx-auto"
   />
